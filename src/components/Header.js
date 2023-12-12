@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import { colors } from '../global/Colors'
+import { colors } from '../global/colors'
 
 const Header = ({title = "Categorias"}) => {
   return (
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.pink1,
+        backgroundColor: colors.violet1,
     },
     text: {
         fontSize: 30,

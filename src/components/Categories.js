@@ -1,5 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import categories from "../data/categories.json"
+import CategoryItem from './CategoryItem'
 
 const Categories = () => {
   return (
@@ -8,7 +9,7 @@ const Categories = () => {
         style={styles.container}
         data = {categories}
         keyExtractor={item => item}
-        renderItem={({item}) => <View><Text> {item} </Text></View> }
+        renderItem={({item}) => <CategoryItem category={item}/> }
         />
     </View>
   )

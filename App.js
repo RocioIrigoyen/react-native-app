@@ -9,7 +9,7 @@ import ItemDetail from './src/screens/ItemDetail';
 const App = () => {
   return (
     <View style={styles.container}>
-      <Home/>
+      <ItemListCategory/>
     </View>
   );
 }

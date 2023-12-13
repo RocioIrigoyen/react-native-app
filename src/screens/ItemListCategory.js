@@ -1,13 +1,41 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, StyleSheet, View, Text } from 'react-native'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
+import Search from '../components/Search'
+import allProducts from "../data/products.json"
+import ProductItem from '../components/ProductItem'
 
-const ItemListCategory = () => {
+const ItemListCategory = ({category}) => {
+
+  const [keyword, setKeyword] = useState("")
+  const [products, setProducts] =useState([])
+
+  useEffect(() => {
+    if (category) {
+      const products = allProducts.filter(product => product.category === category)
+      const productsFiltered = products.filter(product => product.title.includes(keyword))
+      setProducts(productsFiltered)
+
+    } else {
+      const productsFiltered = allProducts.filter(product => product.title.includes(keyword))
+      setProducts(productsFiltered)
+
+    }
+  }, [category, keyword]) 
+  
   return (
-    <View style={styles.container}>
+    <>
       <Header/>
-      <Text>ItemListCategory</Text>
-    </View>
+      <Search onSearch={setKeyword}/>
+      <View style={styles.container}>
+        <FlatList
+        style={styles.list}
+        data={products}
+        keyExtractor={item => item.id}
+        renderItem={({item})=> <ProductItem item = {item}/>}
+        />
+      </View>
+    </>
   )
 }
 
@@ -19,5 +47,8 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:"center",
     alignItems:"center",
+  },
+  list: {
+    width: "100%"
   }
 })

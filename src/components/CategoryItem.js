@@ -3,9 +3,9 @@ import React from 'react'
 import { colors } from '../global/colors'
 import CardShadow from '../wrapper/CardShadow'
 
-const CategoryItem = ({category}) => {
+const CategoryItem = ({category, setCategorySelected}) => {
   return (
-    <Pressable onPress={()=>console.log(category)}>
+    <Pressable onPress={()=>setCategorySelected(category)}>
         <CardShadow style={styles.container}>
         <Text style={styles.text}>{category}</Text>
         </CardShadow>
@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
         marginHorizontal: "10%",
     },
     text: {
+      fontFamily: "Afacad",
+      fontSize: 20,
 
     }
 })

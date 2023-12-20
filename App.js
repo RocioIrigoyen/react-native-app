@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 
 import { colors } from './src/global/colors';
 import Home from './src/screens/Home';
@@ -10,22 +10,43 @@ import { useFonts } from 'expo-font';
 
 const App = () => {
   const [categorySelected, setCategorySelected] = useState("")
+
   const [fontLoaded] = useFonts({
     Afacad: require("./assets/fonts/Afacad-Regular.ttf"),
     Lobster: require("./assets/fonts/Lobster-Regular.ttf")
   })
 
+  const [productDetailId, setProductDetailId] = useState(0)
+
   if (!fontLoaded) return null
 
 
   return (
-    <View style={styles.container}>
-      {categorySelected ? 
-      <ItemListCategory category={categorySelected} setCategorySelected={setCategorySelected}/> 
-      : 
-      <Home setCategorySelected={setCategorySelected}/>}
+    <>
+      <StatusBar
+      backgroundColor={colors.violet1}
+      barStyle="default"
+      />
+      <SafeAreaView style={styles.container}>
+        {
+        productDetailId ?
+        <ItemDetail 
+        productDetailId={productDetailId}
+        setProductDetailId={setProductDetailId}
+        />
+        :
+        categorySelected ? 
+        <ItemListCategory 
+        category={categorySelected} 
+        setCategorySelected={setCategorySelected}
+        setProductDetailId= {setProductDetailId}
+        /> 
+        : 
+        <Home setCategorySelected={setCategorySelected}/>}
 
-    </View>
+      </SafeAreaView>
+    </>
+
   );
 }
 

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, useWindowDimensions} from 'react-native'
 import { useEffect, useState } from 'react'
 import { colors } from '../global/colors'
 
+
 const Header = ({title = "Categorias"}) => {
 
   const {width, height} = useWindowDimensions()  //permite determinar las dimensiones de forma dinámica

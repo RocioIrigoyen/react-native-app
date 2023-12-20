@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Image, Pressable, useWindowDimensions } from 'react-native'
-import Header from '../components/Header'
 import allProducts from "../data/products.json"
 import { useState, useEffect } from 'react'
-import Goback from '../components/Goback'
 import { colors } from '../global/colors'
+import Goback from '../components/Goback'
 
-const ItemDetail = ({productDetailId, setProductDetailId}) => {
+const ItemDetail = ({navigation, route}) => {
+  const {id} = route.params
   const {width, height} = useWindowDimensions()
   const [landscape, setLandscape] = useState(false)
  
@@ -20,18 +20,16 @@ const ItemDetail = ({productDetailId, setProductDetailId}) => {
   const [product, setProduct] = useState({})
 
   useEffect(() => {
-    console.log(productDetailId)
     
-    const productFound = allProducts.find((product) => product.id === productDetailId) 
+    const productFound = allProducts.find((product) => product.id === id) 
 
     setProduct(productFound)
-  }, [productDetailId])
+  }, [id])
 
 
   return (
     <>
-    <Header title= "Detalle del producto"/>
-    <Goback setVariable={setProductDetailId}/>
+      <Goback navigation={navigation} route={route}/>
       <View style={landscape ? styles.containerLandscape : styles.container}>
         <Image
         style={landscape ? styles.imageLandscape : styles.image}

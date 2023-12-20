@@ -2,11 +2,11 @@ import { Image, Pressable, StyleSheet, Text, useWindowDimensions} from 'react-na
 import {useEffect, useState} from 'react'
 import { colors } from '../global/colors'
 
-const ProductItem = ({item, setProductDetailId}) => {
+const ProductItem = ({item, navigation, route}) => {
   const {width, height} = useWindowDimensions()
 
   return (
-    <Pressable style={styles.container} onPress={() => setProductDetailId(item.id)}>
+    <Pressable style={styles.container} onPress={() => navigation.navigate("Product", {id: item.id})}>
         <Image
         style={styles.image}
         resizeMode='cover'

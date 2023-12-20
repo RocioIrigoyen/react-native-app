@@ -2,18 +2,14 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
-const Goback = ({setVariable}) => {
 
-/*     const cleanSelection = () => {
-        setProductDetailId(0)
-        setCategorySelected("")
-    } */
+const Goback = ({navigation}) => {
 
 
   return (
     <>
-        <Pressable style={styles.goBack} title= "Go back" onPress={() => setVariable("")}>
-            <Text style={styles.text}>Volver</Text>
+        <Pressable style={styles.goBack} title= "Go back" onPress={() => navigation.navigate("Home")}>
+         <Text style={styles.text}>Volver al inicio</Text>
         </Pressable>
     </>
   )
@@ -23,10 +19,12 @@ export default Goback
 
 const styles = StyleSheet.create({
     goBack: {
-        backgroundColor: colors.red1,
+        backgroundColor: colors.violet1,
         padding: 10,
     },
     text: {
-        color: "white"
+        fontFamily: "Afacad",
+        color: "white",
+        fontSize: 20,
     }
 })

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 81,
+        "title": "Round Silver Frame Sun Glasses",
+        "description": "A pair of sunglasses can protect your eyes from being hurt. For car driving, vacation travel, outdoor activities, social gatherings,",
+        "price": 19,
+        "discountPercentage": 10.1,
+        "rating": 4.94,
+        "stock": 78,
+        "brand": "Designer Sun Glasses",
+        "category": "sunglasses",
+        "thumbnail": "https://i.dummyjson.com/data/products/81/thumbnail.jpg",
+        "images": [
+          "https://i.dummyjson.com/data/products/81/1.jpg",
+          "https://i.dummyjson.com/data/products/81/2.jpg",
+          "https://i.dummyjson.com/data/products/81/3.jpg",
+          "https://i.dummyjson.com/data/products/81/4.webp",
+          "https://i.dummyjson.com/data/products/81/thumbnail.jpg"
+        ],
+        "quantity": 2
+      },
+      {
+        "id": 82,
+        "title": "Kabir Singh Square Sunglass",
+        "description": "Orignal Metal Kabir Singh design 2020 Sunglasses Men Brand Designer Sun Glasses Kabir Singh Square Sunglass",
+        "price": 50,
+        "discountPercentage": 15.6,
+        "rating": 4.62,
+        "stock": 78,
+        "brand": "Designer Sun Glasses",
+        "category": "sunglasses",
+        "thumbnail": "https://i.dummyjson.com/data/products/82/thumbnail.jpg",
+        "images": [
+          "https://i.dummyjson.com/data/products/82/1.jpg",
+          "https://i.dummyjson.com/data/products/82/2.webp",
+          "https://i.dummyjson.com/data/products/82/3.jpg",
+          "https://i.dummyjson.com/data/products/82/4.jpg",
+          "https://i.dummyjson.com/data/products/82/thumbnail.jpg"
+        ],
+        "quantity": 3
+      }
+]

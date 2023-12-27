@@ -10,7 +10,7 @@ const Orders = () => {
         style={styles.list}
         data={allOrders}
         keyExtractor={item => item.id}
-        renderItem={({item})=> <OrderItem item={item}/>}
+        renderItem={({item})=> <OrderItem order={item}/>}
       />
     </View>
   )

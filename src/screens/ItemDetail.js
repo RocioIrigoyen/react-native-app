@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, Pressable, useWindowDimensions } from 'react-native'
-import allProducts from "../data/products.json"
 import { useState, useEffect } from 'react'
 import { colors } from '../global/colors'
 import Goback from '../components/Goback'
+import { useSelector} from 'react-redux'
 
 const ItemDetail = ({navigation, route}) => {
-  const {id} = route.params
+  
+  const product = useSelector((state) => state.shop.value.productSelected)
   const {width, height} = useWindowDimensions()
   const [landscape, setLandscape] = useState(false)
  
@@ -17,14 +18,7 @@ const ItemDetail = ({navigation, route}) => {
     }
   }, [width, height])
 
-  const [product, setProduct] = useState({})
 
-  useEffect(() => {
-    
-    const productFound = allProducts.find((product) => product.id === id) 
-
-    setProduct(productFound)
-  }, [id])
 
 
   return (

@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useFonts } from 'expo-font';
 import Navigator from './src/navigation/Navigator';
 import { fonts } from './src/global/fonts';
+import { store } from './src/app/store'  //REDUX
+import { Provider } from 'react-redux'  //REDUX
 
 
 const App = () => {
@@ -16,11 +18,12 @@ const App = () => {
 
   return (
     <>
-      <StatusBar
-      backgroundColor={colors.violet1}
-      barStyle="default"
-      />
-      <Navigator/>
+      <StatusBar backgroundColor={colors.violet1} barStyle="default"/>
+      <Provider store={store}>
+        <Navigator/>
+      </Provider>,
+      
+
     </>
 
   );

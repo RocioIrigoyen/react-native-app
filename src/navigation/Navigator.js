@@ -4,9 +4,8 @@ import { StyleSheet} from 'react-native'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
 import { colors } from '../global/colors'
-import { Entypo } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons'; 
 import OrdersStack from './OrdersStack'
+import TabIcon from '../components/TabIcon'
 
 const Tab = createBottomTabNavigator()
 
@@ -24,21 +23,21 @@ const Navigator = () => {
           name="ShopStack" 
           component={ShopStack} 
           options={{
-            tabBarIcon: () => <Entypo name="shop" size={24} color="white" />
+            tabBarIcon: ({focused}) => <TabIcon icon="shop" tab="Shop" focused={focused}/>
           }}
         />
         <Tab.Screen 
           name="CartStack" 
           component={CartStack}
           options={{
-            tabBarIcon: () => <Feather name="shopping-cart" size={24} color="white" />
+            tabBarIcon: ({focused}) => <TabIcon icon="shopping-cart" tab="Cart" focused={focused}/>
           }}
         />
         <Tab.Screen 
           name="OrdersStack" 
           component={OrdersStack}
           options={{
-            tabBarIcon: () => <Feather name="list" size={24} color="white" />
+            tabBarIcon: ({focused}) => <TabIcon icon="list" tab="Orders" focused={focused}/>
           }}
         />
       </Tab.Navigator>

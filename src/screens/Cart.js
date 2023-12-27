@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import allCart from "../data/cart.json"
 import CartItem from '../components/CartItem'
 import { colors } from '../global/colors'
+import Counter from '../components/Counter'
 
 const Cart = () => {
   const [cart, setCart] = useState([])
@@ -16,6 +17,7 @@ const Cart = () => {
   
   return (
     <View style={styles.container}>
+      <Counter/>
       <FlatList
         style={styles.list}
         data={cart}
@@ -38,8 +40,6 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     paddingBottom: 130,
-    justifyContent: "flex-end",
-    alignItems: "center",
     backgroundColor: colors.yellow1,
   },
   list: {

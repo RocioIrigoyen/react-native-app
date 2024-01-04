@@ -1,18 +1,21 @@
 import { StyleSheet, Text, View, FlatList, Pressable} from 'react-native'
 import { useEffect, useState } from 'react'
-import allCart from "../data/cart.json"
 import CartItem from '../components/CartItem'
 import { colors } from '../global/colors'
 import Counter from '../components/Counter'
+import { useSelector} from 'react-redux'
 
 const Cart = () => {
+
+  const cartProducts = useSelector((state) => state.cart.value.cartProducts)
+
   const [cart, setCart] = useState([])
   const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(()=>{
     const total = cart.reduce((acc,product)=> acc + (product.price * product.quantity), 0)
     setTotalPrice(total)
-    setCart(allCart)
+    setCart(cartProducts)
   },[cart])
   
   return (

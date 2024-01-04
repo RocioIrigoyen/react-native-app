@@ -21,7 +21,7 @@ const App = () => {
       <StatusBar backgroundColor={colors.violet1} barStyle="default"/>
       <Provider store={store}>
         <Navigator/>
-      </Provider>,
+      </Provider>
       
 
     </>

@@ -3,35 +3,34 @@ import { useEffect, useState } from 'react'
 import CartItem from '../components/CartItem'
 import { colors } from '../global/colors'
 import Counter from '../components/Counter'
-import { useSelector} from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
+import { usePostOrdersMutation } from '../app/services/shopService'
+import { emptyCart } from '../features/shop/cartSlice'
 
 const Cart = () => {
 
-  const cartProducts = useSelector((state) => state.cart.value.cartProducts)
+  const cart = useSelector((state) => state.cart.value)
+  const [triggerPostOrder] = usePostOrdersMutation()
+  const dispatch = useDispatch(emptyCart)
 
-  const [cart, setCart] = useState([])
-  const [totalPrice, setTotalPrice] = useState(0)
-
-  useEffect(()=>{
-    const total = cart.reduce((acc,product)=> acc + (product.price * product.quantity), 0)
-    setTotalPrice(total)
-    setCart(cartProducts)
-  },[cart])
-  
+  const buyAndDelete = () => {
+    triggerPostOrder(cart)
+    dispatch(emptyCart())
+  }
   return (
     <View style={styles.container}>
       <Counter/>
       <FlatList
         style={styles.list}
-        data={cart}
+        data={cart.items}
         keyExtractor={item => item.id}
         renderItem={({item})=> <CartItem item={item}/>}
       />
       <View style={styles.confirmContainer}>
-        <Pressable>
+        <Pressable onPress={()=> buyAndDelete()}>
           <Text style={styles.textConfirm}>Confirmar compra</Text>
         </Pressable>
-        <Text style={styles.textConfirm}>Total: ${totalPrice}</Text>
+        <Text style={styles.textConfirm}>Total: ${cart.total}</Text>
       </View>
     </View>
   )

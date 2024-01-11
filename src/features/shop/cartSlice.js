@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
-import allCart from "../../data/cart.json"
+
 
 
 const initialState = {
     value: {
-        cartProducts: allCart,
+        user: "rocioirigoyen",
+        items: [],
+        updateAt:"",
+        total:null
     }
   }
 
@@ -13,12 +16,28 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-
-
+        addItem: (state, action) => {
+            const foundItem = state.value.items.find(item => item.id === action.payload.id)
+            if (foundItem) {
+                foundItem.quantity++
+            } else {
+                state.value.items.push({...action.payload, quantity:1})
+            }
+          state.value.total = state.value.items.reduce((acc, item)=> acc + (item.price * item.quantity), 0)
+          state.value.updateAt = new Date().toLocaleString()
+          console.log(state.value)
+        },
+        removeItem: () => {
+            
+        },
+        emptyCart: (state) => {
+            state.value.items = []
+            state.value.total = 0
+        },
     },
 })
   
 
-  export const { } = cartSlice.actions
+  export const { addItem, removeItem, emptyCart } = cartSlice.actions
   
   export default cartSlice.reducer

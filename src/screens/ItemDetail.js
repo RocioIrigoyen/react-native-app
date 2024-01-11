@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 import { colors } from '../global/colors'
 import Goback from '../components/Goback'
 import { useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/shop/cartSlice'
 
 const ItemDetail = ({navigation, route}) => {
-  
+  const dispatch = useDispatch(addItem)
   const product = useSelector((state) => state.shop.value.productSelected)
   const {width, height} = useWindowDimensions()
   const [landscape, setLandscape] = useState(false)
@@ -38,8 +40,8 @@ const ItemDetail = ({navigation, route}) => {
 
         <View style={landscape ? styles.priceContainerLandscape : styles.priceContainer}>
           <Text style={styles.price}>$ {product.price}</Text>
-          <Pressable style={styles.buyNow}>
-          <Text>Comprar</Text>
+          <Pressable style={styles.buyNow} onPress={()=> dispatch(addItem(product))}>
+          <Text>Agregar al carrito</Text>
           </Pressable>
         </View>
        

@@ -2,10 +2,10 @@ import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import { colors } from './src/global/colors';
 import { useState } from 'react';
 import { useFonts } from 'expo-font';
-import Navigator from './src/navigation/Navigator';
 import { fonts } from './src/global/fonts';
 import { store } from './src/app/store'  //REDUX
 import { Provider } from 'react-redux'  //REDUX
+import MainNavigator from './src/navigation/MainNavigator';
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
     <>
       <StatusBar backgroundColor={colors.violet1} barStyle="default"/>
       <Provider store={store}>
-        <Navigator/>
+        <MainNavigator/>
       </Provider>
       
 

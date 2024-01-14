@@ -1,17 +1,27 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputForm from "../components/InputForm"
 import SubmitButton from '../components/SubmitButton'
 import { colors } from '../global/colors'
+import { useLoginMutation } from '../app/services/auth'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../features/auth/authSlice'
 
 const Login = ({navigation}) => {
-    
+    const dispatch = useDispatch()
+    const [triggerLogIn, {data, isError, isSuccess,error,isLoading}] = useLoginMutation()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    useEffect(()=>{
+        if(isSuccess) dispatch(setUser(data))
+        if (isError) console.log(error)
+    },[data,isError,isSuccess])
+
     const onSubmit = () => {
-        
+        triggerLogIn({email,password})
     }
+
   return (
     <View style={styles.main}>
       <View style={styles.container}> 

@@ -25,10 +25,12 @@ const SignUp = ({navigation}) => {
 
     const onSubmit = () => {
         try {
+            setErrorEmail("")
+            setErrorPassword("")
+            setErrorConfirmPassword("")
             signupSchema.validateSync({email,password,confirmPassword})
             triggerSignUp({email,password})
         } catch (error) {
-            console.log(error.path)
             switch (error.path) {
                 case "email":
                     setErrorEmail(error.message)
@@ -43,7 +45,6 @@ const SignUp = ({navigation}) => {
                 default:
                     break;
             }
-            console.log(error.message)
         }
     }
 

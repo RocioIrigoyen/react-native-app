@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 import { Entypo } from '@expo/vector-icons'
+import { useDispatch } from 'react-redux'
+import { removeItem } from '../features/shop/cartSlice'
 
 const CartItem = ({item}) => {
+
+  const dispatch = useDispatch(removeItem)
   return (
     <View style = {styles.card}>
       <View style={styles.textContainer}>
@@ -12,7 +16,9 @@ const CartItem = ({item}) => {
         <Text style= {styles.text}>${item.price}</Text>
         <Text style= {styles.text}>Cantidad: {item.quantity}</Text>
       </View>
-      <Entypo name="trash" size={24} color="white" />
+       <Pressable onPress={()=> dispatch(item)}>
+         <Entypo name="trash" size={24} color="white" />
+       </Pressable>
     </View>
   )
 }

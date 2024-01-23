@@ -27,13 +27,11 @@ export const cartSlice = createSlice({
           state.value.updateAt = new Date().toLocaleString()
         },
         removeItem: (state, action) => {
-
-           /*  const foundItem = state.value.items.find(item => item.id === action.payload.id)
+          const foundItem = state.value.items.find(item => item.id === action.payload.id)
           foundItem.quantity = 0 
-          state.value.items.filter(item => item.id !== action.payload.id)
           state.value.total = state.value.items.reduce((acc, item)=> acc + (item.price * item.quantity), 0)
           const newCart = state.value.items.filter(item => item.id !== action.payload.id)
-          state.value.items = newCart */
+          state.value.items = newCart
         },
         emptyCart: (state) => {
             state.value.items = []

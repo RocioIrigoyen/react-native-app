@@ -16,7 +16,7 @@ const CartItem = ({item}) => {
         <Text style= {styles.text}>${item.price}</Text>
         <Text style= {styles.text}>Cantidad: {item.quantity}</Text>
       </View>
-       <Pressable onPress={()=> dispatch(item)}>
+       <Pressable onPress={()=> dispatch(removeItem(item))}>
          <Entypo name="trash" size={24} color="white" />
        </Pressable>
     </View>

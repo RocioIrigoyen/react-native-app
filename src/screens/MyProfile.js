@@ -21,7 +21,7 @@ const MyProfile = ({navigation}) => {
         />
       <Text>{location?.address}</Text>
       <AddButton title="Cambiar la foto de perfil" onPress={()=> navigation.navigate("ImageSelector")}/>
-      <AddButton title="Ir a mis direcciones" onPress={()=> navigation.navigate("LocationSelector")}/>
+      <AddButton title={location ? "Cambiar mi ubicación" : "Agregar ubicación"} onPress={()=> navigation.navigate("LocationSelector")}/>
     </View>
   )
 }

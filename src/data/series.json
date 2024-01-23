@@ -1,0 +1,243 @@
+[
+    {
+      "id": 0,
+      "title": "Naruto",
+      "description": "A young ninja's journey to become the strongest ninja and leader of his village.",
+      "rating": 4.8,
+      "director": "Masashi Kishimoto",
+      "category": "action",
+      "thumbnail": "https://i.dummyjson.com/data/anime/0/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/0/1.jpg",
+        "https://i.dummyjson.com/data/anime/0/2.jpg",
+        "https://i.dummyjson.com/data/anime/0/3.jpg",
+        "https://i.dummyjson.com/data/anime/0/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Attack on Titan",
+      "description": "In a world where humanity resides within enormous walled cities to protect themselves from Titans, gigantic humanoid creatures.",
+      "rating": 4.9,
+      "director": "Hajime Isayama",
+      "category": "action",
+      "thumbnail": "https://i.dummyjson.com/data/anime/1/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/1/1.jpg",
+        "https://i.dummyjson.com/data/anime/1/2.jpg",
+        "https://i.dummyjson.com/data/anime/1/3.jpg",
+        "https://i.dummyjson.com/data/anime/1/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Demon Slayer",
+      "description": "Tanjiro Kamado's quest to avenge his family and save his sister from demons.",
+      "rating": 4.7,
+      "director": "Haruo Sotozaki",
+      "category": "action",
+      "thumbnail": "https://i.dummyjson.com/data/anime/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/2/1.jpg",
+        "https://i.dummyjson.com/data/anime/2/2.jpg",
+        "https://i.dummyjson.com/data/anime/2/3.jpg",
+        "https://i.dummyjson.com/data/anime/2/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Jujutsu Kaisen",
+      "description": "Yuji Itadori's journey to battle curses and save his friends after encountering a cursed talisman.",
+      "rating": 4.6,
+      "director": "Sunghoo Park",
+      "category": "action",
+      "thumbnail": "https://i.dummyjson.com/data/anime/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/3/1.jpg",
+        "https://i.dummyjson.com/data/anime/3/2.jpg",
+        "https://i.dummyjson.com/data/anime/3/3.jpg",
+        "https://i.dummyjson.com/data/anime/3/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Your Lie in April",
+      "description": "A piano prodigy's journey to find the true meaning of music and love after meeting a free-spirited violinist.",
+      "rating": 4.5,
+      "director": "Kyōhei Ishiguro",
+      "category": "romance",
+      "thumbnail": "https://i.dummyjson.com/data/anime/4/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/4/1.jpg",
+        "https://i.dummyjson.com/data/anime/4/2.jpg",
+        "https://i.dummyjson.com/data/anime/4/3.jpg",
+        "https://i.dummyjson.com/data/anime/4/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Psycho Pass",
+      "description": "In a dystopian future, society is governed by a system that measures the mental state of individuals.",
+      "rating": 4.7,
+      "director": "Katsuyuki Motohiro",
+      "category": "thriller",
+      "thumbnail": "https://i.dummyjson.com/data/anime/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/5/1.jpg",
+        "https://i.dummyjson.com/data/anime/5/2.jpg",
+        "https://i.dummyjson.com/data/anime/5/3.jpg",
+        "https://i.dummyjson.com/data/anime/5/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Dororo",
+      "description": "A ronin and a young orphan with prosthetic limbs seek revenge against demons in feudal Japan.",
+      "rating": 4.6,
+      "director": "Kazuhiro Furuhashi",
+      "category": "action",
+      "thumbnail": "https://i.dummyjson.com/data/anime/6/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/6/1.jpg",
+        "https://i.dummyjson.com/data/anime/6/2.jpg",
+        "https://i.dummyjson.com/data/anime/6/3.jpg",
+        "https://i.dummyjson.com/data/anime/6/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Revolutionary Girl Utena",
+      "description": "Utena Tenjou's journey in the surreal and symbolic dueling academy to revolutionize the world.",
+      "rating": 4.5,
+      "director": "Kunihiko Ikuhara",
+      "category": "drama",
+      "thumbnail": "https://i.dummyjson.com/data/anime/7/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/7/1.jpg",
+        "https://i.dummyjson.com/data/anime/7/2.jpg",
+        "https://i.dummyjson.com/data/anime/7/3.jpg",
+        "https://i.dummyjson.com/data/anime/7/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Clannad",
+      "description": "Tomoya Okazaki's journey through high school, exploring friendship, family, and love.",
+      "rating": 4.7,
+      "director": "Tatsuya Ishihara",
+      "category": "drama",
+      "thumbnail": "https://i.dummyjson.com/data/anime/8/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/8/1.jpg",
+        "https://i.dummyjson.com/data/anime/8/2.jpg",
+        "https://i.dummyjson.com/data/anime/8/3.jpg",
+        "https://i.dummyjson.com/data/anime/8/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Anohana: The Flower We Saw That Day",
+      "description": "A group of friends reunite and confront their past after the ghost of their deceased friend returns.",
+      "rating": 4.8,
+      "director": "Tatsuyuki Nagai",
+      "category": "drama",
+      "thumbnail": "https://i.dummyjson.com/data/anime/9/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/9/1.jpg",
+        "https://i.dummyjson.com/data/anime/9/2.jpg",
+        "https://i.dummyjson.com/data/anime/9/3.jpg",
+        "https://i.dummyjson.com/data/anime/9/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Toradora!",
+      "description": "Ryuuji Takasu and Taiga Aisaka navigate the challenges of high school and discover love.",
+      "rating": 4.6,
+      "director": "Tatsuyuki Nagai",
+      "category": "romance",
+      "thumbnail": "https://i.dummyjson.com/data/anime/10/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/10/1.jpg",
+        "https://i.dummyjson.com/data/anime/10/2.jpg",
+        "https://i.dummyjson.com/data/anime/10/3.jpg",
+        "https://i.dummyjson.com/data/anime/10/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Your Name",
+      "description": "Taki and Mitsuha, two strangers, find themselves mysteriously connected through their dreams.",
+      "rating": 4.9,
+      "director": "Makoto Shinkai",
+      "category": "romance",
+      "thumbnail": "https://i.dummyjson.com/data/anime/11/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/11/1.jpg",
+        "https://i.dummyjson.com/data/anime/11/2.jpg",
+        "https://i.dummyjson.com/data/anime/11/3.jpg",
+        "https://i.dummyjson.com/data/anime/11/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Lovely★Complex",
+      "description": "A comedic love story about a tall girl and a short guy navigating high school life and relationships.",
+      "rating": 4.5,
+      "director": "Kōnosuke Uda",
+      "category": "romance",
+      "thumbnail": "https://i.dummyjson.com/data/anime/12/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/12/1.jpg",
+        "https://i.dummyjson.com/data/anime/12/2.jpg",
+        "https://i.dummyjson.com/data/anime/12/3.jpg",
+        "https://i.dummyjson.com/data/anime/12/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Another",
+      "description": "A transfer student discovers a mysterious and deadly curse that haunts his new class.",
+      "rating": 4.7,
+      "director": "Tsutomu Mizushima",
+      "category": "horror",
+      "thumbnail": "https://i.dummyjson.com/data/anime/13/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/13/1.jpg",
+        "https://i.dummyjson.com/data/anime/13/2.jpg",
+        "https://i.dummyjson.com/data/anime/13/3.jpg",
+        "https://i.dummyjson.com/data/anime/13/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Tokyo Ghoul",
+      "description": "Kaneki Ken, a college student turned half-ghoul, struggles to survive in a world where ghouls and humans coexist.",
+      "rating": 4.8,
+      "director": "Shuhei Morita",
+      "category": "horror",
+      "thumbnail": "https://i.dummyjson.com/data/anime/14/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/14/1.jpg",
+        "https://i.dummyjson.com/data/anime/14/2.jpg",
+        "https://i.dummyjson.com/data/anime/14/3.jpg",
+        "https://i.dummyjson.com/data/anime/14/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Paranoia Agent",
+      "description": "A series of mysterious attacks by a bat-wielding assailant plunge the city into chaos.",
+      "rating": 4.6,
+      "director": "Satoshi Kon",
+      "category": "horror",
+      "thumbnail": "https://i.dummyjson.com/data/anime/15/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/anime/15/1.jpg",
+        "https://i.dummyjson.com/data/anime/15/2.jpg",
+        "https://i.dummyjson.com/data/anime/15/3.jpg"
+      ]
+    }
+
+  ]
+  

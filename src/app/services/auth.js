@@ -20,8 +20,15 @@ export const authApi = createApi({
          method:"POST",
          body: auth,
         })
+      }),
+      deleteAccount: builder.mutation ({
+        query: ({...auth}) => ({
+          url:`accounts:delete?key=${api_key}`,
+          method: "POST",
+          body: auth,
+        })
       })
     })
 })
 
-export const { useSignupMutation, useLoginMutation } = authApi
+export const { useSignupMutation, useLoginMutation, useDeleteAccountMutation } = authApi

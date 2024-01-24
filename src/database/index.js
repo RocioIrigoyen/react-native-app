@@ -5,27 +5,23 @@ const db = SQLite.openDatabase("session.db")
 
 export const init = () => {
     const promise = new Promise((resolve, reject) => {
-        db.transaction(tx => {
+        db.transaction((tx) => {
             tx.executeSql(
-                "CREATE TABLE IF NOT EXISTS sessions (localId TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL, IdToken TEXT NOT NULL)",
+                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL, idToken TEXT NOT NULL)",
                 [],
                 ()=> resolve(),
-                (_,err)=> {reject(err)}
+                (_,err)=> reject(err)
             )
         })
     })
     return promise
 }
 
-export const insertSession = ({
-    email,
-    localId,
-    idToken
-}) => {
+export const insertSession = ({email,localId,idToken}) => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                "INSERT INTO sessions (email, localId, Idtoken) VALUES(?, ?, ?);",
+                "INSERT INTO sessionUser (email, localId, idtoken) VALUES(?, ?, ?);",
                 [email,localId,idToken],
                 (_, result)=> resolve(result),
                 (_, err)=> reject(err)
@@ -37,9 +33,9 @@ export const insertSession = ({
 
 export const fetchSession = () => {
     const promise = new Promise((resolve, reject) => {
-        db.transaction(tx => {
+        db.transaction((tx) => {
             tx.executeSql(
-                "SELECT * FROM sessions",
+                "SELECT * FROM sessionUser",
                 [],
                 (_, result)=> resolve(result),
                 (_, err)=> reject(err)
@@ -53,7 +49,7 @@ export const deleteSession = ({localId}) => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                "DELETE FROM sessions WHERE localId = ?",
+                "DELETE FROM sessionUser WHERE localId = ?",
                 [localId],
                 (_, result)=> resolve(result),
                 (_, err)=> reject(err)
@@ -67,7 +63,7 @@ export const deleteAllSession = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
-                "DELETE FROM sessions",
+                "DELETE FROM sessionUser",
                 [],
                 (_, result)=> resolve(result),
                 (_, err)=> reject(err)

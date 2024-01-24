@@ -5,6 +5,7 @@ import ProductItem from '../components/ProductItem'
 import Goback from '../components/Goback'
 import { useGetProductsQuery } from '../app/services/shopService'
 import { useSelector } from 'react-redux'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 
 const ItemListCategory = ({navigation, route}) => {
@@ -12,6 +13,7 @@ const ItemListCategory = ({navigation, route}) => {
   const {data, isLoading, error} = useGetProductsQuery(category)
   const [keyword, setKeyword] = useState("")
   const [products, setProducts] =useState()
+  const [loading, setLoading] = useState(true)
 
 
 
@@ -20,8 +22,11 @@ const ItemListCategory = ({navigation, route}) => {
       const dataArray = Object.values(data)
       const productsFiltered = dataArray.filter(product => product.title.includes(keyword))
       setProducts(productsFiltered)
+      setLoading(false)
     }
   }, [keyword, data])  
+
+  if(loading) return <LoadingSpinner/>
   
   return (
     <>

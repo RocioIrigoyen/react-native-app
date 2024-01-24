@@ -5,16 +5,29 @@ import { colors } from '../global/colors'
 import { useSelector, useDispatch} from 'react-redux'
 import { usePostOrdersMutation } from '../app/services/shopService'
 import { emptyCart } from '../features/shop/cartSlice'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Cart = () => {
 
   const cart = useSelector((state) => state.cart.value)
-  const cartProducts = useSelector((state) => state.cart.value.items)
-  const [triggerPostOrder] = usePostOrdersMutation()
+  const localId = useSelector(state => state.auth.value.localId)
+  const [triggerPostOrder, {data,isSuccess,error,isError, isLoading}] = usePostOrdersMutation()
   const dispatch = useDispatch(emptyCart)
+  const [info,setInfo] = useState(true)
+  const [errorMessage,setErrorMessage] = useState("")
+
+
+  useEffect(()=>{
+    if(isSuccess && cart.items.length === 0 ) setInfo(false) // ver
+    if(isError && error) setErrorMessage(error.error)
+  },[isSuccess,cart,isError,error]) 
+
+  if(!info) return <View><Text>Carrito vacío</Text></View>
+  if(errorMessage)  return <View><Text>Error al cargar</Text></View>
+  if(isLoading)  return <LoadingSpinner/>
 
   const buyAndDelete = () => {
-    triggerPostOrder(cart)
+    triggerPostOrder({localId, order:cart})
     dispatch(emptyCart())
   }
   return (

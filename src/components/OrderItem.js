@@ -4,16 +4,12 @@ import {AntDesign} from "@expo/vector-icons"
 import { colors } from '../global/colors'
 
 const OrderItem = ({order}) => {
-    const total = order.items.reduce(
-        (acc, currentItem) => (acc += currentItem.price * currentItem.quantity), 
-        0
-     )
+
   return (
     <View style={styles.card}>
       <View style={styles.textContainer}>
-        <Text style={styles.text}>id: {order.id}</Text>
-        <Text>{new Date(order.createdAt).toLocaleString()}</Text>
-        <Text style={styles.text}>Total: ${total} </Text>
+        <Text style={styles.text}>{order.updateAt}</Text>
+        <Text style={styles.text}>Total: $ {order.total}</Text>
       </View>
       <AntDesign name="search1" size={24} color="black" />
     </View>

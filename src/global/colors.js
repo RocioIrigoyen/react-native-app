@@ -3,5 +3,6 @@ export const colors = {
     violet1: "#711DB0",
     red1: "#EF4040",
     yellow1: "#FFA732",
+    green1: "#A0FCC8"
 
 }

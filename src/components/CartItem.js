@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 import { Entypo } from '@expo/vector-icons'
@@ -12,10 +12,11 @@ const CartItem = ({item}) => {
     <View style = {styles.card}>
       <View style={styles.textContainer}>
         <Text style= {styles.text}>{item.title}</Text>
-        <Text style= {styles.text2}>{item.brand}</Text>
+        <Text style= {styles.text2}>{item.director}</Text>
         <Text style= {styles.text}>${item.price}</Text>
         <Text style= {styles.text}>Cantidad: {item.quantity}</Text>
       </View>
+      <Image source={{ uri: item.images }} style={styles.itemImage} />
        <Pressable onPress={()=> dispatch(removeItem(item))}>
          <Entypo name="trash" size={24} color="white" />
        </Pressable>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     textContainer: {
-        width: "70%",
+        width: "50%",
         flexDirection:"column",
         justifyContent: "flex-start",
         alignItems:"flex-start",
@@ -52,5 +53,10 @@ const styles = StyleSheet.create({
     text2: {
         fontSize: 14,
         color: "white",
-    }
+    },
+    itemImage: {
+      width: 60, 
+      height: 60, 
+      borderRadius: 10,
+    },
 })

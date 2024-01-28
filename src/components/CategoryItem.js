@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 import CardShadow from '../wrapper/CardShadow'
@@ -15,8 +15,16 @@ const CategoryItem = ({category, navigation}) => {
       navigation.navigate("Category", {category})
     }}>
         <CardShadow style={styles.container}>
-        <Text style={styles.text}>{category}</Text>
+        <Image
+          style={styles.image}
+          resizeMode='cover'
+          source={category === "romance" ? require("../../assets/romance.png") : 
+          category === "drama" ? require("../../assets/drama.png") :  
+          category === "horror" ? require("../../assets/terror.png") : 
+          category === "thriller" ? require("../../assets/thriller.png") : 
+          require("../../assets/accion.png") }/>
         </CardShadow>
+
     </Pressable>
   )
 }
@@ -25,7 +33,7 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.red1,
+        backgroundColor: colors.pink1,
         margin: 10,
         padding: 10,
         width: "80%",
@@ -37,5 +45,8 @@ const styles = StyleSheet.create({
       fontFamily: "Afacad",
       fontSize: 20,
 
+    },
+    image: {
+      width: "100%"
     }
 })

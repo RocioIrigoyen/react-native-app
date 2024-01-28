@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 import AddButton from '../components/AddButton'
 import { googleApi } from '../firebase/googleApi'
 
+
 const LocationSelector = ({navigation}) => {
 
     const localId = useSelector(state => state.auth.value.localId)
@@ -17,7 +18,7 @@ const LocationSelector = ({navigation}) => {
     const [triggerPostUserLocation,{data,isSuccess,isError,error}] = usePostUserLocationMutation()
 
 
-    
+  
 
     const confirmAddress = async () => {
 
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         gap: 20,
         paddingBottom: 130,
+        backgroundColor: colors.green1
 
     },
     noLocationContainer: {

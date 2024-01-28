@@ -25,23 +25,23 @@ export default ProductItem
 
 const styles = StyleSheet.create({
     container: {
-        width: "80%",
-        backgroundColor: colors.yellow1,
+        width: "100%",
+        backgroundColor: colors.pink1,
         paddingVertical: 15,
         paddingHorizontal: 15,
         marginVertical: 10,
-        marginHorizontal: "10%",
         borderRadius: 5,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        gap: 30,
+        gap: 15,
     },
     text: {
         fontFamily: "Afacad",
         fontSize: 20,
         width: "60%",
         textAlign: "center",
+        color: "white"
     },
     textMin: {
       fontFamily: "Afacad",

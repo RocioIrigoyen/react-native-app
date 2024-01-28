@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View} from 'react-native'
 import React, { useState, useEffect } from 'react'
 import InputForm from "../components/InputForm"
 import SubmitButton from '../components/SubmitButton'
@@ -7,6 +7,8 @@ import { useLoginMutation } from '../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { insertSession } from '../database'
+import Logo from '../components/Logo'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const Login = ({navigation}) => {
     const dispatch = useDispatch()
@@ -28,9 +30,13 @@ const Login = ({navigation}) => {
         triggerLogIn({email,password})
     }
 
+    if(isLoading)  return <LoadingSpinner/>
+    
   return (
     <View style={styles.main}>
+       <Logo/>
       <View style={styles.container}> 
+      
         <Text style={styles.title}>Login</Text>
         <InputForm
             label= "Email"
@@ -45,7 +51,6 @@ const Login = ({navigation}) => {
             error=""
             isSecure={true}
         />
-
         <SubmitButton
         title= "Send"
         onPress={onSubmit}
@@ -65,15 +70,15 @@ const styles = StyleSheet.create({
     main : {
         width: "100%",
         height: "100%",
-        justifyContent:"center",
-        alignItems: "center"
+        justifyContent:"space-around",
+        alignItems: "center",
+        backgroundColor: colors.green1
     },
     container: {
         width: "90%",
         flexDirection:"column",
         justifyContent:"center",
         alignItems: "center",
-        backgroundColor: colors.pink1,
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,

@@ -6,6 +6,7 @@ import Goback from '../components/Goback'
 import { useGetProductsQuery } from '../app/services/shopService'
 import { useSelector } from 'react-redux'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { colors } from '../global/colors'
 
 
 const ItemListCategory = ({navigation, route}) => {
@@ -52,6 +53,8 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:"center",
     alignItems:"center",
+    marginBottom: "15%",
+    backgroundColor: colors.green1
   },
   list: {
     width: "100%"

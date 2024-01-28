@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
 import { signupSchema } from '../validations/signupSchema'
 import { insertSession } from '../database'
+import Logo from '../components/Logo'
 
 const SignUp = ({navigation}) => {
     const dispatch = useDispatch()
@@ -56,6 +57,7 @@ const SignUp = ({navigation}) => {
 
   return (
     <View style={styles.main}>
+        <Logo/>
       <View style={styles.container}> 
         <Text style={styles.title}>Sign Up</Text>
         <InputForm
@@ -98,15 +100,15 @@ const styles = StyleSheet.create({
     main : {
         width: "100%",
         height: "100%",
-        justifyContent:"center",
-        alignItems: "center"
+        justifyContent:"space-around",
+        alignItems: "center",
+        backgroundColor: colors.green1
     },
     container: {
         width: "90%",
         flexDirection:"column",
         justifyContent:"center",
         alignItems: "center",
-        backgroundColor: colors.pink1,
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,

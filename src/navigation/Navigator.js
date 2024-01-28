@@ -23,28 +23,28 @@ const Navigator = () => {
           name="ShopStack" 
           component={ShopStack} 
           options={{
-            tabBarIcon: ({focused}) => <TabIcon icon="shop" tab="Shop" focused={focused}/>
+            tabBarIcon: ({focused}) => <TabIcon icon="home" tab="Tienda" focused={focused}/>
           }}
         />
         <Tab.Screen 
           name="CartStack" 
           component={CartStack}
           options={{
-            tabBarIcon: ({focused}) => <TabIcon icon="shopping-cart" tab="Cart" focused={focused}/>
+            tabBarIcon: ({focused}) => <TabIcon icon="shoppingcart" tab="Carrito" focused={focused}/>
           }}
         />
         <Tab.Screen 
           name="OrdersStack" 
           component={OrdersStack}
           options={{
-            tabBarIcon: ({focused}) => <TabIcon icon="list" tab="Orders" focused={focused}/>
+            tabBarIcon: ({focused}) => <TabIcon icon="bars" tab="Pedidos" focused={focused}/>
           }}
         />
         <Tab.Screen 
           name="MyProfileStack" 
           component={MyProfileStack}
           options={{
-            tabBarIcon: ({focused}) => <TabIcon icon="user" tab="Profile" focused={focused}/>
+            tabBarIcon: ({focused}) => <TabIcon icon="user" tab="Perfil" focused={focused}/>
           }}
         />
       </Tab.Navigator>
@@ -59,10 +59,6 @@ const styles = StyleSheet.create({
     shadowColor: "black",
     elevation: 4,
     position: "absolute",
-    bottom: 25,
-    left: 20,
-    right: 20,
-    borderRadius: 15,
     height: 90,
   }
 })

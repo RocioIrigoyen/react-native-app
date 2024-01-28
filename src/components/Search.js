@@ -26,7 +26,7 @@ const Search = ({onSearch}) => {
         setError("")
     }
   return (
-    <View>
+    <View style={{backgroundColor: colors.green1}}>
         <View style={styles.container}>
             <TextInput
             style={styles.input} 
@@ -55,10 +55,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingTop: 10,
         width: "90%",
+        backgroundColor: colors.green1
     },
     input: {
-        color: "white",
-        backgroundColor: colors.violet1,
+        backgroundColor: "white",
         borderRadius: 8,
         borderWidth: 1,
         padding: 10,

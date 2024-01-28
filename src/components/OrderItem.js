@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import {AntDesign} from "@expo/vector-icons"
 import { colors } from '../global/colors'
 
 const OrderItem = ({order}) => {
@@ -11,7 +10,6 @@ const OrderItem = ({order}) => {
         <Text style={styles.text}>{order.updateAt}</Text>
         <Text style={styles.text}>Total: $ {order.total}</Text>
       </View>
-      <AntDesign name="search1" size={24} color="black" />
     </View>
   )
 }

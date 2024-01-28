@@ -4,19 +4,21 @@ import AddButton from '../components/AddButton'
 import * as ImagePicker from 'expo-image-picker'
 import { usePostProfileImageMutation, useGetProfileImageQuery } from '../app/services/shopService'
 import { useSelector } from 'react-redux'
+import { colors } from '../global/colors'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const ImageSelector = ({navigation}) => {
 
     const [image, setImage] = useState()
-    const [triggerProfileImage, {isError, error}] = usePostProfileImageMutation()
+    const [triggerProfileImage, {isError, error, isLoading}] = usePostProfileImageMutation()
     const localId = useSelector(state => state.auth.value.localId)
     const {data, isSuccess} = useGetProfileImageQuery(localId)
 
     useEffect(() => {
         if(isSuccess && data) setImage(data.image)
     }, [isSuccess])
-    
 
+    if(isLoading)  return <LoadingSpinner/>
     const pickImage = async () => {
         const {granted} = await ImagePicker.requestCameraPermissionsAsync()
         if(!granted) {
@@ -35,7 +37,21 @@ const ImageSelector = ({navigation}) => {
               }
         }
 
-      };
+      }
+
+    const pickImageFromGallery = async () => {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 4],
+        quality: 0.3,
+        base64: true
+      });
+
+      if (!result.canceled) {
+        setImage('data:image/jpeg;base64,' + result.assets[0].base64);
+      }
+    }
     
 
     const confirmImage = () => {
@@ -50,8 +66,10 @@ const ImageSelector = ({navigation}) => {
             style= {styles.image}
             resizeMode='cover'
        />
-      <AddButton title="Sacar otra foto" onPress={pickImage}/>
-      <AddButton title="Confirmar cambios" onPress={confirmImage}/>
+      <AddButton title="Sacar foto" onPress={pickImage}/>
+      <AddButton title="Abrir galería" onPress={pickImageFromGallery}/>
+      <AddButton  title="Confirmar cambios" onPress={confirmImage}/>
+      <Image source={require("../../assets/logomtsmall.png")} style={styles.image} resizeMode="cover"/>
     </View>
   )
 }
@@ -62,7 +80,8 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         alignItems:"center",
-        marginTop:20
+        paddingTop:40,
+        backgroundColor: colors.green1
     },
     image: {
         width: 200,

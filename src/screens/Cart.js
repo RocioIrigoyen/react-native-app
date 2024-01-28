@@ -22,7 +22,7 @@ const Cart = () => {
     if(isError && error) setErrorMessage(error.error)
   },[isSuccess,cart,isError,error]) 
 
-  if(!info) return <View><Text>Carrito vacío</Text></View>
+  //if(!info) return <View><Text>Carrito vacío</Text></View>
   if(errorMessage)  return <View><Text>Error al cargar</Text></View>
   if(isLoading)  return <LoadingSpinner/>
 
@@ -30,24 +30,30 @@ const Cart = () => {
     triggerPostOrder({localId, order:cart})
     dispatch(emptyCart())
   }
+  
+
   return (
     <View style={styles.container}>
+
       <FlatList
-        style={styles.list}
-        data={cart.items}
-        keyExtractor={item => item.id}
-        renderItem={({item})=> <CartItem item={item}/>}
+            style={styles.list}
+            data={cart.items}
+            keyExtractor={item => item.id}
+            renderItem={({item})=> <CartItem item={item}/>}
       />
-      <View>
-        <Pressable style={styles.deleteButton} onPress={()=> dispatch(emptyCart())}>
-          <Text style={styles.textConfirm}>Vaciar carrito</Text>
-        </Pressable>
+
+      <View style={styles.confirmContainer}>
+
+              <Text style={styles.textConfirm}>Total: ${cart.total}</Text>
       </View>
       <View style={styles.confirmContainer}>
-        <Pressable onPress={()=> buyAndDelete()}>
-          <Text style={styles.textConfirm}>Confirmar compra</Text>
-        </Pressable>
-        <Text style={styles.textConfirm}>Total: ${cart.total}</Text>
+            <Pressable  onPress={()=> dispatch(emptyCart())}>
+              <Text style={styles.textConfirm}>Vaciar carrito</Text>
+            </Pressable>
+             <Pressable style={styles.button} onPress={()=> buyAndDelete()}>
+                <Text style={styles.textConfirm}>Confirmar compra</Text>
+              </Pressable>
+
       </View>
     </View>
   )
@@ -58,19 +64,20 @@ export default Cart
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    paddingBottom: 130,
-    backgroundColor: colors.yellow1,
-    gap: 10
+    paddingBottom: 70,
+    backgroundColor: colors.green1,
+    gap: 10,
   },
   list: {
     width: "100%",
   },
   confirmContainer: {
-    flexDirection:"row",
+    flexDirection: "row",
     alignItems:"center",
-    justifyContent:"space-between",
+    justifyContent:"flex-start",
     width: "100%",
-    padding: 15,
+    padding: 10,
+    gap: 80,
     backgroundColor: "grey",
   },
   textConfirm: {
@@ -78,13 +85,13 @@ const styles = StyleSheet.create({
     fontFamily: "Afacad",
     fontSize: 18,
   },
-  deleteButton: {
+  button: {
     backgroundColor: colors.pink1,
     justifyContent: "center",
     alignitems: "center",
-    width: "60%",
+    width: "40%",
     padding: 10,
     borderRadius: 10,
-    margin: 30
+    margin: 20
   }
 })

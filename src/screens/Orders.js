@@ -31,6 +31,7 @@ const Orders = () => {
         keyExtractor={item => item.id}
         renderItem={({item})=> <OrderItem order={item}/>}
       />
+      
 
   )
 }

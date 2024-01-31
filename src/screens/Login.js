@@ -9,12 +9,16 @@ import { setUser } from '../features/auth/authSlice'
 import { insertSession } from '../database'
 import Logo from '../components/Logo'
 import LoadingSpinner from '../components/LoadingSpinner'
+import { loginSchema } from '../validations/loginSchema'
 
 const Login = ({navigation}) => {
     const dispatch = useDispatch()
     const [triggerLogIn, {data, isError, isSuccess,error,isLoading}] = useLoginMutation()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [errorEmail, setErrorEmail] = useState("")
+    const [errorPassword, setErrorPassword] = useState("")
+    const [loginError, setLoginError] = useState("")
 
     useEffect(()=>{
         if(isSuccess) {
@@ -23,11 +27,43 @@ const Login = ({navigation}) => {
             .then(result => console.log(result))
             .catch(err => console.log(err))
         }
-        if (isError) console.log(error)
+        if (isError) {
+            if (error && error.data && error.data.error && error.data.error.errors) {
+                const errorArray = error.data.error.errors;
+                const invalidCredentialsError = errorArray.find(e => e.message === "INVALID_LOGIN_CREDENTIALS")
+
+                if (invalidCredentialsError) {
+                    setLoginError("Usuario no registrado. Verifica tu mail y contraseña.");
+                } else {
+                    console.log(error)
+                }
+            } else if (error && error.data && error.data.error && error.data.error.message) {
+                setLoginError(error.data.error.message)
+            } else {
+                console.log(error)
+            }
+        }
     },[data,isError,isSuccess])
 
     const onSubmit = () => {
-        triggerLogIn({email,password})
+        try {
+            setErrorEmail("")
+            setErrorPassword("")
+            loginSchema.validateSync({ email, password })
+            triggerLogIn({ email, password })
+        } catch (error) {
+                switch (error.path) {
+                    case "email":
+                        setErrorEmail(error.message);
+                        break
+                    case "password":
+                        setErrorPassword(error.message);
+                        break
+                    default:
+                        break
+                }
+
+        }
     }
 
     if(isLoading)  return <LoadingSpinner/>
@@ -42,15 +78,18 @@ const Login = ({navigation}) => {
             label= "Email"
             value={email}
             onChangeText={(t)=> setEmail(t)}
-            error=""
+            error={errorEmail}
         />
         <InputForm
             label= "Password"
             value={password}
             onChangeText={(t)=> setPassword(t)}
-            error=""
+            error={errorPassword}
             isSecure={true}
         />
+        {loginError !== "" && (
+          <Text style={styles.errorText}>{loginError}</Text>
+        )}
         <SubmitButton
         title= "Send"
         onPress={onSubmit}
@@ -96,5 +135,12 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: "Afacad",
         color: "blue"
+    },
+    errorText: {
+              fontSize: 16,
+      fontFamily: "Afacad",
+      color: "red",
+      marginLeft: 20,
+      fontStyle: "italic"
     }
 })

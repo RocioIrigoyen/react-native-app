@@ -61,17 +61,17 @@ const styles = StyleSheet.create({
       backgroundColor: colors.violet1,
     },
     text: {
-        fontSize: 30,
+        fontSize: 25,
         color: "white",
-        fontFamily:"Lobster",
+        fontFamily:"Donegal",
     },
     logOut: {
       position: "absolute",
       right: 10
     },
     image: {
-      width: 50,
-      height: 50,
+      width: 40,
+      height: 40,
       left: 10,
       position: "absolute",
       borderRadius: 30

@@ -1,6 +1,6 @@
-import {object, string, ref} from "yup"
+import { object, string } from "yup";
 
 export const loginSchema = object({
-    email: string().email("Ingrese un mail válido").required("Ingrese un mail"),
-    password: string().min(6, "mínimo 6 caracteres").required("Ingrese una contraseña")
-})
+  email: string().email("Ingrese un mail válido").required("Ingrese un mail"),
+  password: string().min(6, "Mínimo 6 caracteres").required("Ingrese una contraseña"),
+});

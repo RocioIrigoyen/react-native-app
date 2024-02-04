@@ -5,12 +5,15 @@ import Goback from '../components/Goback'
 import { useSelector} from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/shop/cartSlice'
+import { useGetProductQuery } from '../app/services/shopService'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 
 
 const ItemDetail = ({navigation, route}) => {
   const dispatch = useDispatch(addItem)
-  const product = useSelector((state) => state.shop.value.productSelected)
+  const productId = useSelector((state) => state.shop.value.productSelected.id)
+  const { data: product, isLoading, isError } = useGetProductQuery(productId)
   
   
   const {width, height} = useWindowDimensions()
@@ -24,8 +27,8 @@ const ItemDetail = ({navigation, route}) => {
     }
   }, [width, height])
 
-
-
+  
+  if(isLoading) return <LoadingSpinner/>
 
   return (
     <>

@@ -6,7 +6,7 @@ import { deleteAllSession, deleteSession } from '../database';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearUser } from '../features/auth/authSlice';
 import { useGetProfileImageQuery} from '../app/services/shopService'
-
+import Toast from 'react-native-toast-message'
 
 const Header = ({title = "Categorias"}) => {
 
@@ -23,10 +23,20 @@ const Header = ({title = "Categorias"}) => {
       setLandscape(false)
     }
   }, [width, height])
+
+  const showToast = () => {
+    Toast.show({
+      type: 'info',
+      text1: `¡Hasta pronto!`,
+      visibilityTime: 2500,
+      autoHide: true,
+    })
+  }
   
   const onLogOut = () => {
     deleteAllSession().then(result => console.log(result))
     dispatch(clearUser())
+    showToast()
   }
 
   return (

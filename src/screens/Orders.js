@@ -9,29 +9,32 @@ import { colors } from '../global/colors'
 const Orders = () => {
   const localId = useSelector(state => state.auth.value.localId)
   const {data, isLoading, isSuccess,isError,error} = useGetOrdersQuery(localId)
-  const [info,setInfo] = useState(true)
   const [errorMessage,setErrorMessage] = useState("")
   const [loading, setLoading] = useState(true)
 
 
   useEffect(()=>{
-    if(isSuccess && data.length === 0 ) setInfo(false)
     if(isError && error) setErrorMessage(error.error)
     if(isSuccess && data) setLoading(false)
   }, [isSuccess,data,isError,error]) 
 
-  if(!info) return <View style={styles.container}><Text style={styles.textContainer}>No hay órdenes para mostrar</Text></View>
-  if(errorMessage)  return <View><Text>Error al cargar</Text></View>
+
+  if(errorMessage)  return <View><Text style={styles.textContainer}>Error al cargar</Text></View>
   if(loading)  return <LoadingSpinner/>
   return (
 
-     <FlatList
-        style={styles.container}
+    <View style={styles.container}>
+    {data.length === 0 ? (
+      <Text style={styles.textContainer}>No hay órdenes para mostrar</Text>
+    ) : (
+      <FlatList
+        style={styles.list}
         data={data}
         keyExtractor={item => item.id}
-        renderItem={({item})=> <OrderItem order={item}/>}
+        renderItem={({item}) => <OrderItem order={item}/>}
       />
-      
+    )}
+  </View>
 
   )
 }
@@ -51,12 +54,11 @@ const styles = StyleSheet.create({
     color: colors.violet1
   },
   textContainer: {
-    flex:1,
-    backgroundColor: colors.green1,
-    gap: 10,
-    marginBottom: "15%",
+    color: colors.violet1,
+    marginTop: "50%",
     padding: 20,
-    alignItems:"center",
-    justifyContent:"center"
+    fontSize: 35,
+    fontFamily: "Afacad",
+    textAlign: "center"
   }
 })

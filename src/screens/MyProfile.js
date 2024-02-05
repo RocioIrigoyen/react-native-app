@@ -20,9 +20,11 @@ const MyProfile = ({navigation}) => {
         style= {styles.image}
         resizeMode='cover'
         />
-      <Text>{location?.address}</Text>
+      <View style={styles.containerText}>
+        <Text style={styles.text}>Dirección de envío: {location?.address}</Text>
+      </View>
       <AddButton title="Cambiar la foto de perfil" onPress={()=> navigation.navigate("ImageSelector")}/>
-      <AddButton title={location ? "Cambiar mi ubicación" : "Agregar ubicación"} onPress={()=> navigation.navigate("LocationSelector")}/>
+      <AddButton title={location ? "Cambiar mi dirección" : "Agregar dirección de envío"} onPress={()=> navigation.navigate("LocationSelector")}/>
       <Image source={require("../../assets/logomtsmall.png")} style={styles.image} resizeMode="cover"/>
     </View>
   )
@@ -35,10 +37,19 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:"center",
         paddingTop:40,
-        backgroundColor: colors.green1
+        backgroundColor: colors.green1,
+        gap: 10
     },
     image: {
         width: 200,
         height: 200
+    },
+    containerText: {
+      width: "95%",
+    },
+    text: {
+      color: colors.violet1,
+      fontSize: 20,
+      fontFamily: "Afacad"
     }
 })

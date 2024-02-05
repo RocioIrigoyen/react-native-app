@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable, useWindowDimensions, Modal } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, useWindowDimensions} from 'react-native'
 import { useState, useEffect } from 'react'
 import { colors } from '../global/colors'
 import Goback from '../components/Goback'
@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../features/shop/cartSlice'
 import { useGetProductQuery } from '../app/services/shopService'
 import LoadingSpinner from '../components/LoadingSpinner'
+import Toast from 'react-native-toast-message'
 
 
 
@@ -19,6 +20,7 @@ const ItemDetail = ({navigation, route}) => {
   const {width, height} = useWindowDimensions()
   const [landscape, setLandscape] = useState(false)
  
+ 
   useEffect (()=>{
     if (width > height) {
       setLandscape(true)
@@ -26,6 +28,16 @@ const ItemDetail = ({navigation, route}) => {
       setLandscape(false)
     }
   }, [width, height])
+
+
+  const showToast = () => {
+    Toast.show({
+      type: 'success',
+      text1: `Agregaste ${product.title} al carrito`,
+      visibilityTime: 2500,
+      autoHide: true,
+    })
+  }
 
   
   if(isLoading) return <LoadingSpinner/>
@@ -45,12 +57,14 @@ const ItemDetail = ({navigation, route}) => {
 
         <View style={landscape ? styles.priceContainerLandscape : styles.priceContainer}>
           <Text style={styles.price}>$ {product.price}</Text>
-          <Pressable style={styles.buyNow} onPress={()=> dispatch(addItem(product))}>
+          <Pressable style={styles.buyNow}             
+            onPress={() => {
+              dispatch(addItem(product))
+              showToast()
+            }}>
           <Text>Agregar al carrito</Text>
           </Pressable>
         </View>
-       
-
 
       </View>
     </>
@@ -116,5 +130,14 @@ const styles = StyleSheet.create({
     width: "30%",
     flexDirection:"column",
 
-  }
+  },
+  modalContainer: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+  },
+  modalText: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
 })

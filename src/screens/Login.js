@@ -73,7 +73,7 @@ const Login = ({navigation}) => {
        <Logo/>
       <View style={styles.container}> 
       
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>Iniciar sesión</Text>
         <InputForm
             label= "Email"
             value={email}
@@ -81,7 +81,7 @@ const Login = ({navigation}) => {
             error={errorEmail}
         />
         <InputForm
-            label= "Password"
+            label= "Contraseña"
             value={password}
             onChangeText={(t)=> setPassword(t)}
             error={errorPassword}
@@ -91,7 +91,7 @@ const Login = ({navigation}) => {
           <Text style={styles.errorText}>{loginError}</Text>
         )}
         <SubmitButton
-        title= "Send"
+        title= "Enviar"
         onPress={onSubmit}
         />
         <Text style={styles.sub}>¿No tenés una cuenta?</Text>
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        fontFamily: "Lobster"
+        fontFamily: "Donegal"
     },
     sub: {
         fontSize: 14,

@@ -2,9 +2,15 @@ import { Pressable, StyleSheet, Text} from 'react-native'
 import React from 'react'
 import { colors } from '../global/colors'
 
-const AddButton = ({title, onPress}) => {
+const AddButton = ({title, onPress, backgroundColor = colors.yellow1}) => {
+
+  const buttonStyle = {
+    ...styles.button,
+    backgroundColor: backgroundColor,
+  }
+
   return (
-    <Pressable style={styles.button} onPress={onPress}>
+    <Pressable style={buttonStyle} onPress={onPress}>
       <Text style={styles.title}>{title}</Text>
     </Pressable>
   )

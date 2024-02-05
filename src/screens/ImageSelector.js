@@ -68,8 +68,8 @@ const ImageSelector = ({navigation}) => {
        />
       <AddButton title="Sacar foto" onPress={pickImage}/>
       <AddButton title="Abrir galería" onPress={pickImageFromGallery}/>
-      <AddButton  title="Confirmar cambios" onPress={confirmImage}/>
       <Image source={require("../../assets/logomtsmall.png")} style={styles.image} resizeMode="cover"/>
+      <AddButton  title="Confirmar cambios" onPress={confirmImage} backgroundColor={colors.pink1}/>
     </View>
   )
 }

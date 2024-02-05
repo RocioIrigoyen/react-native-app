@@ -75,7 +75,7 @@ const LocationSelector = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text>Direccion: {address}</Text>
+      <Text style={styles.text}>Direccion: {address}</Text>
 
 
        {location ? (
@@ -119,5 +119,13 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: colors.violet1
     },
+    containerText: {
+      width: "95%",
+    },
+    text: {
+      color: colors.violet1,
+      fontSize: 20,
+      fontFamily: "Afacad"
+    }
 
 })

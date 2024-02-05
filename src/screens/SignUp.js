@@ -59,7 +59,7 @@ const SignUp = ({navigation}) => {
     <View style={styles.main}>
         <Logo/>
       <View style={styles.container}> 
-        <Text style={styles.title}>Sign Up</Text>
+        <Text style={styles.title}>Registrarse</Text>
         <InputForm
             label= "Email"
             value={email}
@@ -67,7 +67,7 @@ const SignUp = ({navigation}) => {
             error={errorEmail}
         />
         <InputForm
-            label= "Password"
+            label= "Contraseña"
             value={password}
             onChangeText={(t)=> setPassword(t)}
             error={errorPassword}
@@ -75,14 +75,14 @@ const SignUp = ({navigation}) => {
         />
  
         <InputForm
-            label= "Confirm Password"
+            label= "Confirmar Contraseña"
             value={confirmPassword}
             onChangeText={(t)=> setConfirmPassword(t)}
             error={errorConfirmPassword}
             isSecure= {true}
         />
         <SubmitButton
-        title= "Send"
+        title= "Enviar"
         onPress={onSubmit}
         />
         <Text style={styles.sub}>¿Tenés una cuenta?</Text>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        fontFamily: "Lobster"
+        fontFamily: "Donegal"
     },
     sub: {
         fontSize: 14,

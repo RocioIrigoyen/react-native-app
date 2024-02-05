@@ -6,6 +6,7 @@ import { useSelector, useDispatch} from 'react-redux'
 import { usePostOrdersMutation } from '../app/services/shopService'
 import { emptyCart } from '../features/shop/cartSlice'
 import LoadingSpinner from '../components/LoadingSpinner'
+import Toast from 'react-native-toast-message'
 
 const Cart = () => {
 
@@ -13,16 +14,13 @@ const Cart = () => {
   const localId = useSelector(state => state.auth.value.localId)
   const [triggerPostOrder, {data,isSuccess,error,isError, isLoading}] = usePostOrdersMutation()
   const dispatch = useDispatch(emptyCart)
-  const [info,setInfo] = useState(true)
   const [errorMessage,setErrorMessage] = useState("")
 
 
   useEffect(()=>{
-    if(isSuccess && cart.items.length === 0 ) setInfo(false) // ver
     if(isError && error) setErrorMessage(error.error)
   },[isSuccess,cart,isError,error]) 
 
-  //if(!info) return <View><Text>Carrito vacío</Text></View>
   if(errorMessage)  return <View><Text>Error al cargar</Text></View>
   if(isLoading)  return <LoadingSpinner/>
 
@@ -30,31 +28,62 @@ const Cart = () => {
     triggerPostOrder({localId, order:cart})
     dispatch(emptyCart())
   }
+
+  const showToast = () => {
+    Toast.show({
+      type: 'success',
+      text1: `¡Tu compra se realizó con éxito!`,
+      visibilityTime: 2500,
+      autoHide: true,
+    })
+  }
   
+  const showToastEmpty = () => {
+    Toast.show({
+      type: 'info',
+      text1: `Has vaciado el carrito`,
+      visibilityTime: 2500,
+      autoHide: true,
+    })
+  }
 
   return (
     <View style={styles.container}>
 
-      <FlatList
-            style={styles.list}
-            data={cart.items}
-            keyExtractor={item => item.id}
-            renderItem={({item})=> <CartItem item={item}/>}
-      />
+      {cart.items.length === 0 ? (
+              <View style={styles.emptyCartMessage}>
+                <Text style={styles.emptyCartMessageText}>Todavía no agregaste nada al carrito</Text>
+              </View>
+            ) : (
+              <FlatList
+                style={styles.list}
+                data={cart.items}
+                keyExtractor={item => item.id}
+                renderItem={({item}) => <CartItem item={item} />}
+              />
+      )}
 
-      <View style={styles.confirmContainer}>
 
-              <Text style={styles.textConfirm}>Total: ${cart.total}</Text>
-      </View>
-      <View style={styles.confirmContainer}>
-            <Pressable  onPress={()=> dispatch(emptyCart())}>
+         {cart.items.length > 0 && (
+          <>
+            <View style={styles.confirmContainer}>
+                  <Text style={styles.textConfirm}>Total: ${cart.total}</Text>
+            </View>
+          <View style={styles.confirmContainer}>
+            <Pressable  onPress={()=> 
+              {dispatch(emptyCart()) 
+              showToastEmpty()}}>
               <Text style={styles.textConfirm}>Vaciar carrito</Text>
             </Pressable>
-             <Pressable style={styles.button} onPress={()=> buyAndDelete()}>
+             <Pressable style={styles.button} 
+             onPress={()=> 
+             {buyAndDelete()
+             showToast()}}>
                 <Text style={styles.textConfirm}>Confirmar compra</Text>
               </Pressable>
-
-      </View>
+              </View>
+            </>
+         )}
     </View>
   )
 }
@@ -93,5 +122,15 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     margin: 20
+  },
+  emptyCartMessageText:{
+    color: colors.violet1,
+    fontSize: 35,
+    fontFamily: "Afacad",
+    textAlign: "center"
+  },
+  emptyCartMessage: {
+    padding: 20,
+    marginTop: "50%"
   }
 })

@@ -7,6 +7,7 @@ import { store } from './src/app/store'  //REDUX
 import { Provider } from 'react-redux'  //REDUX
 import MainNavigator from './src/navigation/MainNavigator';
 import { init } from './src/database';
+import Toast from 'react-native-toast-message'
 
 init()
 .then(()=>console.log("DB initialized"))
@@ -25,7 +26,9 @@ const App = () => {
       <StatusBar backgroundColor={colors.violet1} barStyle="default"/>
       <Provider store={store}>
         <MainNavigator/>
+      
       </Provider>
+      <Toast/>
       
 
     </>

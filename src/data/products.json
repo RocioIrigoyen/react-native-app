@@ -1,279 +1,277 @@
 [
-  {
-      "id": 0,
-      "title": "Naruto",
-      "price": 1500,
-      "description": "A young ninja's journey to become the strongest ninja and leader of his village.",
-      "rating": 4.8,
+    {
       "author": "Masashi Kishimoto",
       "category": "action",
+      "description": "A young ninja's journey to become the strongest ninja and leader of his village.",
+      "id": 0,
+      "images": "https://iili.io/Jcc9Vln.jpg",
+      "price": 1500,
+      "rating": 4.8,
       "thumbnail": "https://iili.io/Jcc9Vln.jpg",
-      "images": "https://iili.io/Jcc9Vln.jpg"
-  },
-  {
-      "id": 1,
-      "title": "Attack on Titan",
-      "price": 2000,
-      "description": "In a world where humanity resides within enormous walled cities to protect themselves from Titans, gigantic humanoid creatures.",
-      "rating": 4.9,
+      "title": "Naruto"
+    },
+    {
       "author": "Hajime Isayama",
       "category": "action",
+      "description": "In a world where humanity resides within enormous walled cities to protect themselves from Titans, gigantic humanoid creatures.",
+      "id": 1,
+      "images": "https://iili.io/Jcc9MKX.jpg",
+      "price": 2000,
+      "rating": 4.9,
       "thumbnail": "https://iili.io/Jcc9MKX.jpg",
-      "images": "https://iili.io/Jcc9MKX.jpg"
-  },
-  {
-      "id": 2,
-      "title": "Demon Slayer",
-      "price": 1760,
-      "description": "Tanjiro Kamado's quest to avenge his family and save his sister from demons.",
-      "rating": 4.7,
+      "title": "Attack on Titan"
+    },
+    {
       "author": "Haruo Sotozaki",
       "category": "action",
+      "description": "Tanjiro Kamado's quest to avenge his family and save his sister from demons.",
+      "id": 2,
+      "images": "https://iili.io/Jcc9EPt.jpg",
+      "price": 1760,
+      "rating": 4.7,
       "thumbnail": "https://iili.io/Jcc9EPt.jpg",
-      "images": "https://iili.io/Jcc9EPt.jpg"
-  },
-  {
-      "id": 3,
-      "title": "Jujutsu Kaisen",
-      "price": 607,
-      "description": "Yuji Itadori's journey to battle curses and save his friends after encountering a cursed talisman.",
-      "rating": 4.6,
+      "title": "Demon Slayer"
+    },
+    {
       "author": "Sunghoo Park",
       "category": "action",
+      "description": "Yuji Itadori's journey to battle curses and save his friends after encountering a cursed talisman.",
+      "id": 3,
+      "images": "https://iili.io/Jcc9hHG.jpg",
+      "price": 607,
+      "rating": 4.6,
       "thumbnail": "https://iili.io/Jcc9hHG.jpg",
-      "images": "https://iili.io/Jcc9hHG.jpg"
-  },
-  {
-      "id": 4,
-      "title": "Your Lie in April",
-      "price": 3435,
-      "description": "A piano prodigy's journey to find the true meaning of music and love after meeting a free-spirited violinist.",
-      "rating": 4.5,
+      "title": "Jujutsu Kaisen"
+    },
+    {
       "author": "Kyōhei Ishiguro",
       "category": "romance",
+      "description": "A piano prodigy's journey to find the true meaning of music and love after meeting a free-spirited violinist.",
+      "id": 4,
+      "images": "https://iili.io/Jcc9jRf.png",
+      "price": 3435,
+      "rating": 4.5,
       "thumbnail": "https://iili.io/Jcc9jRf.png",
-      "images": "https://iili.io/Jcc9jRf.png"
-  },
-  {
-      "id": 5,
-      "title": "Psycho Pass",
-      "price": 1700,
-      "description": "In a dystopian future, society is governed by a system that measures the mental state of individuals.",
-      "rating": 4.7,
+      "title": "Your Lie in April"
+    },
+    {
       "author": "Katsuyuki Motohiro",
       "category": "thriller",
+      "description": "In a dystopian future, society is governed by a system that measures the mental state of individuals.",
+      "id": 5,
+      "images": "https://iili.io/JccJwn2.jpg",
+      "price": 1700,
+      "rating": 4.7,
       "thumbnail": "https://iili.io/JccJwn2.jpg",
-      "images": "https://iili.io/JccJwn2.jpg"
-  },
-  {
-      "id": 6,
-      "title": "Dororo",
-      "price": 3500,
-      "description": "A ronin and a young orphan with prosthetic limbs seek revenge against demons in feudal Japan.",
-      "rating": 4.6,
+      "title": "Psycho Pass"
+    },
+    {
       "author": "Kazuhiro Furuhashi",
       "category": "action",
+      "description": "A ronin and a young orphan with prosthetic limbs seek revenge against demons in feudal Japan.",
+      "id": 6,
+      "images": "https://iili.io/JccJNGS.webp",
+      "price": 3500,
+      "rating": 4.6,
       "thumbnail": "https://iili.io/JccJNGS.webp",
-      "images": "https://iili.io/JccJNGS.webp"
-  },
-  {
-      "id": 7,
-      "title": "Revolutionary Girl Utena",
-      "price": 2345,
-      "description": "Utena Tenjou's journey in the surreal and symbolic dueling academy to revolutionize the world.",
-      "rating": 4.5,
+      "title": "Dororo"
+    },
+    {
       "author": "Kunihiko Ikuhara",
       "category": "drama",
+      "description": "Utena Tenjou's journey in the surreal and symbolic dueling academy to revolutionize the world.",
+      "id": 7,
+      "images": "https://iili.io/JccJO67.jpg",
+      "price": 2345,
+      "rating": 4.5,
       "thumbnail": "https://iili.io/JccJO67.jpg",
-      "images": "https://iili.io/JccJO67.jpg"
-  },
-  {
-      "id": 8,
-      "title": "Clannad",
-      "price": 800,
-      "description": "Tomoya Okazaki's journey through high school, exploring friendship, family, and love.",
-      "rating": 4.7,
+      "title": "Revolutionary Girl Utena"
+    },
+    {
       "author": "Tatsuya Ishihara",
       "category": "drama",
+      "description": "Tomoya Okazaki's journey through high school, exploring friendship, family, and love.",
+      "id": 8,
+      "images": "https://iili.io/JccJkF9.jpg",
+      "price": 800,
+      "rating": 4.7,
       "thumbnail": "https://iili.io/JccJkF9.jpg",
-      "images": "https://iili.io/JccJkF9.jpg"
-  },
-  {
-      "id": 9,
-      "title": "Anohana: The Flower We Saw That Day",
-      "price": 2899,
-      "description": "A group of friends reunite and confront their past after the ghost of their deceased friend returns.",
-      "rating": 4.8,
+      "title": "Clannad"
+    },
+    {
       "author": "Tatsuyuki Nagai",
       "category": "drama",
+      "description": "A group of friends reunite and confront their past after the ghost of their deceased friend returns.",
+      "id": 9,
+      "images": "https://iili.io/JccJ88u.png",
+      "price": 2899,
+      "rating": 4.8,
       "thumbnail": "https://iili.io/JccJ88u.png",
-      "images": "https://iili.io/JccJ88u.png"
-  },
-  {
-      "id": 10,
-      "title": "Toradora!",
-      "price": 400,
-      "description": "Ryuuji Takasu and Taiga Aisaka navigate the challenges of high school and discover love.",
-      "rating": 4.6,
+      "title": "Anohana: The Flower We Saw That Day"
+    },
+    {
       "author": "Tatsuyuki Nagai",
       "category": "romance",
+      "description": "Ryuuji Takasu and Taiga Aisaka navigate the challenges of high school and discover love.",
+      "id": 10,
+      "images": "https://iili.io/JccJSyb.jpg",
+      "price": 400,
+      "rating": 4.6,
       "thumbnail": "https://iili.io/JccJSyb.jpg",
-      "images": "https://iili.io/JccJSyb.jpg"
-  },
-  {
-      "id": 11,
-      "title": "Your Name",
-      "price": 3670,
-      "description": "Taki and Mitsuha, two strangers, find themselves mysteriously connected through their dreams.",
-      "rating": 4.9,
+      "title": "Toradora!"
+    },
+    {
       "author": "Makoto Shinkai",
       "category": "romance",
+      "description": "Taki and Mitsuha, two strangers, find themselves mysteriously connected through their dreams.",
+      "id": 11,
+      "images": "https://iili.io/Jcc91VI.jpg",
+      "price": 3670,
+      "rating": 4.9,
       "thumbnail": "https://iili.io/Jcc91VI.jpg",
-      "images": "https://iili.io/Jcc91VI.jpg"
-  },
-  {
-      "id": 12,
-      "title": "Lovely★Complex",
-      "price": 3500,
-      "description": "A comedic love story about a tall girl and a short guy navigating high school life and relationships.",
-      "rating": 4.5,
+      "title": "Your Name"
+    },
+    {
       "author": "Kōnosuke Uda",
       "category": "romance",
+      "description": "A comedic love story about a tall girl and a short guy navigating high school life and relationships.",
+      "id": 12,
+      "images": "https://iili.io/JccJguj.jpg",
+      "price": 3500,
+      "rating": 4.5,
       "thumbnail": "https://iili.io/JccJguj.jpg",
-      "images": "https://iili.io/JccJguj.jpg"
-  },
-  {
-      "id": 13,
-      "title": "Another",
-      "price": 1800,
+      "title": "Lovely★Complex"
+    },
+    {
+      "category": "horror",
       "description": "A transfer student discovers a mysterious and deadly curse that haunts his new class.",
+      "id": 13,
+      "images": "https://iili.io/JccJrwx.jpg",
+      "price": 1800,
       "rating": 4.7,
-      "category": "horror",
       "thumbnail": "https://iili.io/JccJrwx.jpg",
-      "images": "https://iili.io/JccJrwx.jpg"
-  },
-  {
-      "id": 14,
-      "title": "Tokyo Ghoul",
-      "price": 1900,
+      "title": "Another"
+    },
+    {
+      "category": "horror",
       "description": "Kaneki Ken, a college student turned half-ghoul, struggles to survive in a world where ghouls and humans coexist.",
+      "id": 14,
+      "images": "https://iili.io/JccJ4ZQ.jpg",
+      "price": 1900,
       "rating": 4.8,
-      "category": "horror",
       "thumbnail": "https://iili.io/JccJ4ZQ.jpg",
-      "images": "https://iili.io/JccJ4ZQ.jpg"
-  },
-  {
-      "id": 15,
-      "title": "Paranoia Agent",
-      "price": 2780,
+      "title": "Tokyo Ghoul"
+    },
+    {
+      "category": "horror",
       "description": "A series of mysterious attacks by a bat-wielding assailant plunge the city into chaos.",
+      "id": 15,
+      "images": "https://iili.io/JccJPnV.jpg",
+      "price": 2780,
       "rating": 4.6,
-      "category": "horror",
       "thumbnail": "https://iili.io/JccJPnV.jpg",
-      "images": "https://iili.io/JccJPnV.jpg"
-  },
-  {
-      "id": 16,
-      "title": "Monster",
-      "price": 2500,
+      "title": "Paranoia Agent"
+    },
+    {
+      "category": "thriller",
       "description": "A brilliant surgeon pursues a young psychopath he once saved, now on a killing spree.",
+      "id": 16,
+      "images": "https://iili.io/J0gPnQj.webp",
+      "price": 2500,
       "rating": 4.8,
+      "thumbnail": "https://iili.io/J0gPnQj.webp",
+      "title": "Monster"
+    },
+    {
       "category": "thriller",
-      "thumbnail": "https://iili.io/JccR9cY.jpg",
-      "images": "https://iili.io/JccR9cY.jpg"
-  },
-  {
-      "id": 17,
-      "title": "Death Note",
-      "price": 2200,
       "description": "Light Yagami gains a supernatural notebook that allows him to kill anyone whose name he writes.",
+      "id": 17,
+      "images": "https://iili.io/J0gPChb.jpg",
+      "price": 2200,
       "rating": 4.9,
+      "thumbnail": "https://iili.io/J0gPChb.jpg",
+      "title": "Death Note"
+    },
+    {
       "category": "thriller",
-      "thumbnail": "https://iili.io/JccRG4i.jpg",
-      "images": "https://iili.io/JccRG4i.jpg"
-  },
-  {
-      "id": 18,
-      "title": "Liar Game",
-      "price": 1950,
       "description": "Participants in a psychological game must outsmart each other to win a large sum of money.",
-      "rating": 4.7,
-      "category": "thriller",
-      "thumbnail": "https://iili.io/JccRt0C.jpg",
-      "images": "https://iili.io/JccRt0C.jpg"
-  },
-  {
-      "id": 19,
-      "title": "Monster Musume",
-      "price": 1500,
-      "description": "Kimihito Kurusu's life becomes complicated when he becomes the host for various monster girls.",
-      "rating": 4.5,
-      "category": "thriller",
-      "thumbnail": "https://iili.io/JccRSwn.jpg",
-      "images": "https://iili.io/JccRSwn.jpg"
-  },
-  {
-      "id": 20,
-      "title": "Berserk",
-      "price": 2800,
-      "description": "Guts, a lone mercenary, seeks sanctuary from demonic forces in a dark and medieval world.",
-      "rating": 4.8,
-      "category": "thriller",
-      "thumbnail": "https://iili.io/JccRjgh.jpg",
-      "images": "https://iili.io/JccRjgh.jpg"
-  },
-  {
-      "id": 21,
-      "title": "Gantz",
-      "price": 2100,
-      "description": "Kei Kurono and others are resurrected to participate in a deadly game against alien invaders.",
-      "rating": 4.6,
-      "category": "horror",
-      "thumbnail": "https://iili.io/JccRZ8O.jpg",
-      "images": "https://iili.io/JccRZ8O.jpg"
-  },
-  {
-      "id": 22,
-      "title": "Uzumaki",
+      "id": 18,
+      "images": "https://iili.io/J0gPfpe.png",
       "price": 1950,
-      "description": "A town is cursed by supernatural events related to spirals.",
       "rating": 4.7,
-      "category": "horror",
-      "thumbnail": "https://iili.io/JccRAF3.jpg",
-      "images": "https://iili.io/JccRAF3.jpg"
-  },
-  {
-      "id": 23,
-      "title": "Fuan no Tane",
-      "price": 1600,
-      "description": "A collection of short stories exploring various urban legends and creepy occurrences.",
+      "thumbnail": "https://iili.io/J0gPfpe.png",
+      "title": "Liar Game"
+    },
+    {
+      "category": "thriller",
+      "description": "\"BLAME!\" follows Killy, a lone wanderer in a dystopian future, as he navigates a colossal and chaotic structure called \"the City\" in search of the Net Terminal Gene. Amidst relentless dangers, he seeks to bring order to the sprawling, techno-organic labyrinth and save humanity from extinction.",
+      "id": 19,
+      "images": "https://iili.io/J0gPxCx.jpg",
+      "price": 1500,
       "rating": 4.5,
+      "thumbnail": "https://iili.io/J0gPxCx.jpg",
+      "title": "Blame!"
+    },
+    {
+      "category": "thriller",
+      "description": "Guts, a lone mercenary, seeks sanctuary from demonic forces in a dark and medieval world.",
+      "id": 20,
+      "images": "https://iili.io/J0gPd42.jpg",
+      "price": 2800,
+      "rating": 4.8,
+      "thumbnail": "https://iili.io/J0gPd42.jpg",
+      "title": "Berserk"
+    },
+    {
       "category": "horror",
-      "thumbnail": "https://iili.io/JccROqY.jpg",
-      "images": "https://iili.io/JccROqY.jpg"
-  },
-  {
-      "id": 24,
-      "title": "A Silent Voice",
-      "price": 3400,
-      "description": "Shoya Ishida seeks redemption after bullying a deaf classmate, Shoko Nishimiya, in elementary school.",
-      "rating": 4.9,
+      "description": "Kei Kurono and others are resurrected to participate in a deadly game against alien invaders.",
+      "id": 21,
+      "images": "https://iili.io/J0rTCCX.jpg",
+      "price": 2100,
+      "rating": 4.6,
+      "thumbnail": "https://iili.io/J0rTCCX.jpg",
+      "title": "Gantz"
+    },
+    {
+      "category": "horror",
+      "description": "A town is cursed by supernatural events related to spirals.",
+      "id": 22,
+      "images": "https://iili.io/J0rTfjI.jpg",
+      "price": 1950,
+      "rating": 4.7,
+      "thumbnail": "https://iili.io/J0rTfjI.jpg",
+      "title": "Uzumaki"
+    },
+    {
+      "category": "horror",
+      "description": "A collection of short stories exploring various urban legends and creepy occurrences.",
+      "id": 23,
+      "images": "https://iili.io/J0rTo4s.jpg",
+      "price": 1600,
+      "rating": 4.5,
+      "thumbnail": "https://iili.io/J0rTo4s.jpg",
+      "title": "Fuan no Tane"
+    },
+    {
       "author": "Yoshitoki Ōima",
       "category": "drama",
-      "thumbnail": "https://iili.io/JccRP8v.jpg",
-      "images": "https://iili.io/JccRP8v.jpg"
-  },
-  {
-      "id": 25,
-      "title": "March Comes in Like a Lion",
-      "price": 2750,
-      "description": "Professional shogi player Rei Kiriyama navigates the challenges of his personal and professional life.",
-      "rating": 4.8,
+      "description": "Shoya Ishida seeks redemption after bullying a deaf classmate, Shoko Nishimiya, in elementary school.",
+      "id": 24,
+      "images": "https://iili.io/J0rTnGn.png",
+      "price": 3400,
+      "rating": 4.9,
+      "thumbnail": "https://iili.io/J0rTnGn.png",
+      "title": "A Silent Voice"
+    },
+    {
       "author": "Chika Umino",
       "category": "drama",
-      "thumbnail": "https://iili.io/JccRWTd.jpg",
-      "images": "https://iili.io/JccRWTd.jpg"
-  }
-]
-
-  
+      "description": "Professional shogi player Rei Kiriyama navigates the challenges of his personal and professional life.",
+      "id": 25,
+      "images": "https://iili.io/J0rTqQt.jpg",
+      "price": 2750,
+      "rating": 4.8,
+      "thumbnail": "https://iili.io/J0rTqQt.jpg",
+      "title": "March Comes in Like a Lion"
+    }
+  ]

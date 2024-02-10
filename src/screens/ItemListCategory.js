@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:"center",
     alignItems:"center",
-    marginBottom: "15%",
+    paddingBottom: "25%",
     backgroundColor: colors.green1
   },
   list: {

@@ -1,6 +1,7 @@
 # E-Commerce App - "Manga Town" - React Native
 
 Una aplicación de venta de manga (comic japonés) desarrollada con React Native.
+APK: https://expo.dev/artifacts/eas/jKNDWDAqDBLv7HMGV9yd9P.apk
 
 ## Funcionalidades Principales
 

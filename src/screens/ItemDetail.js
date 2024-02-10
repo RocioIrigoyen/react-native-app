@@ -37,6 +37,7 @@ const ItemDetail = ({navigation, route}) => {
       visibilityTime: 2500,
       autoHide: true,
     })
+    navigation.navigate("CartStack")
   }
 
   
